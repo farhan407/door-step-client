@@ -12,22 +12,27 @@ const UserContext = ({children}) => {
     const [user,setUser]=useState(null);
     const[loader,setLoader]=useState(true);
     const signUp=(email,password)=>{
+        setLoader(true);
         return createUserWithEmailAndPassword(auth,email,password)
     }
     const logIn=(email,password)=>{
+        setLoader(true);
         return signInWithEmailAndPassword(auth, email, password)
     }
     const logInWithGoogle=()=>{
+        setLoader(true);
         return signInWithPopup(auth, provider)
     }
     const logInWithGitHub=()=>{
+        setLoader(true);
         return signInWithPopup(auth, providerGit)
     }
     const logOut=()=>{
+        setLoader(true);
         return signOut(auth);
     }
     useEffect(()=>{
-        const unSubscribe= onAuthStateChanged(auth,currentUser =>{
+        const unSubscribe= onAuthStateChanged(auth,(currentUser) =>{
             setUser(currentUser);
             setLoader(false);
         })
