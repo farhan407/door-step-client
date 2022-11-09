@@ -1,0 +1,17 @@
+
+.ExploreButtonLink{
+    text-decoration: none;
+    color:white;
+}
+.ExploreButtonLink:hover{
+    text-decoration: none;
+    color:white;
+}
+
+/* responsive  */
+
+@media screen and (max-width:991px) {
+    .description{
+        text-align: center;
+    }
+}
