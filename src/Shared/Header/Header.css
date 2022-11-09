@@ -1,6 +1,36 @@
-.navToggle{
-    color:white;
+.navToggle {
+    color: white;
 }
-.navBar{
-    background-color:#0B1222;
+
+.navBar {
+    background-color: #0B1222;
+}
+
+.showName {
+    display: block;
+}
+
+.hideName {
+    display: none;
+}
+
+.visible {
+    position: absolute;
+    background-color: gray;
+    right: 15%;
+    padding: 5px;
+    margin-top: 10px;
+    z-index: 1;
+}
+
+.privateNav {
+    padding-top: 12px;
+}
+
+@media screen and (max-width:992px) {
+    .privateNav {
+        display: flex;
+        flex-direction: column;
+    }
+
 }

@@ -6,7 +6,7 @@ import ImageNotFound from '../../Images/404.jpg'
 
 const NotFound = () => {
     return (
-        <Container className='text-center'>
+        <Container className='text-center text-white'>
             <div className='text-center py-3'>
                 <img className='notfound' src={ImageNotFound} alt="" />
             </div>
