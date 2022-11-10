@@ -41,19 +41,19 @@ const AddService = () => {
                     <Form onSubmit={handleAddUser}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label className='text-white'>Name</Form.Label>
-                            <Form.Control type="text" name='name' onBlur={handleInputBlur} placeholder="Enter Service Name" />
+                            <Form.Control type="text" name='name' onBlur={handleInputBlur} placeholder="Enter Service Name" required />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label className='text-white'>Iamge Url:</Form.Label>
-                            <Form.Control type="text" name='img' onBlur={handleInputBlur} placeholder="Enter Image Url:" />
+                            <Form.Control type="text" name='img' onBlur={handleInputBlur} placeholder="Enter Image Url:" required/>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label className='text-white'>Price:</Form.Label>
-                            <Form.Control type="text" name='price' onBlur={handleInputBlur} placeholder="Price" />
+                            <Form.Control type="text" name='price' onBlur={handleInputBlur} placeholder="Price" required />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                             <Form.Label className='text-white'>Description</Form.Label>
-                            <Form.Control as="textarea" name='description' onBlur={handleInputBlur} rows={3} />
+                            <Form.Control as="textarea" name='description' onBlur={handleInputBlur} rows={3} required/>
                         </Form.Group>
                         <Button variant="success" type="submit">
                             Add Service

@@ -6,7 +6,7 @@ import ReviewsSection from '../../../../Reviews/ReviewsSection';
 
 const ServiceDetailsSection = () => {
     const data = useLoaderData();
-    const { name, img, price, description } = data;
+    const { name, img, price, description,_id } = data;
     return (
         <Container className='my-3'>
             <h1 className='text-white text-center fw-bold py-3'>Service In Details</h1>
@@ -28,7 +28,7 @@ const ServiceDetailsSection = () => {
                 </Row>
             </Container>
             <h1 className='text-white text-center fw-bold py-3'>Customer Reviews</h1>
-            <ReviewsSection></ReviewsSection>
+            <ReviewsSection serviceName={name} id={_id}></ReviewsSection>
         </Container>
     );
 };
