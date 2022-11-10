@@ -63,7 +63,7 @@ const Home = () => {
                         <div className='description'>
                             <h1 className='text-white pt-4 pb-2 my-5 fw-bold'>Reliability First Priority</h1>
                             <p className='text-white'>Offer the lowest price with the highest value. Deliver your parcel at the right location at the right time.</p>
-                            <Button className='px-4 py-2 my-3 fw-bold' variant="success"><Link className='ExploreButtonLink' to='/reviews'>My Reviews</Link></Button>
+                            <Button className='px-4 py-2 my-3 fw-bold' variant="success"><Link className='ExploreButtonLink' to='/addservice'>Add Service</Link></Button>
                         </div>
                     </Col>
                     <Col md={6} lg={6}>
