@@ -53,7 +53,7 @@ const Home = () => {
                 </Row>
             </Container>
             <Container className='text-white my-5'>
-                <h1>My Services  </h1>
+                <h1>My Services</h1>
                 <Row className='g-3'>
                 </Row>
             </Container>
