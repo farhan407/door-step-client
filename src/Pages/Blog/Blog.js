@@ -2,6 +2,8 @@ import React from 'react';
 import { Accordion, Container } from 'react-bootstrap';
 
 const Blog = () => {
+    let title = "Door Step -Blog";
+    document.title = title;
     return (
         <Container className='py-4'>
             <h1 className='pb-4 fw-bold text-center text-white'>Get Some Knowledge</h1>

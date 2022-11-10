@@ -6,6 +6,8 @@ import MyAllReviews from './MyAllReviews/MyAllReviews';
 const MyReviews = () => {
     const {user}=useContext(AuthContext);
     const [myReviews,setmyReviews]=useState([]);
+    let title = "Door Step -My Reviews";
+    document.title = title;
     const handleDelete=(_id)=>{
         const proceed= window.confirm('Are you sure to delete this ?');
         if(proceed)

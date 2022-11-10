@@ -5,6 +5,8 @@ import ServiceCard from './ServiceCard/ServiceCard';
 
 const Services = () => {
     const data=useLoaderData();
+    let title = "Door Step -Services";
+    document.title = title;
     // console.log(data);
     return (
         <Container>

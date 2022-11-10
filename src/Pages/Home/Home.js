@@ -12,6 +12,8 @@ import HomeCard from './HomeCard/HomeCard';
 const Home = () => {
     const data = useLoaderData();
     console.log(data);
+    let title = "Door Step -Home";
+    document.title = title;
     return (
         <Container>
             <Container>
@@ -59,7 +61,7 @@ const Home = () => {
                 <h1>My Services</h1>
                 <Row className='g-3'>
                     {
-                        data.map(element=><HomeCard data={element} key={element._id}></HomeCard>)
+                        data.map(element => <HomeCard data={element} key={element._id}></HomeCard>)
                     }
                 </Row>
                 <Button className='px-3 py-2 fw-bold' variant='success'><Link className='text-white text-decoration-none' to='/services'>See All</Link></Button>

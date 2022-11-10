@@ -5,6 +5,8 @@ const AddService = () => {
     const [service, setService] = useState({});
     const time = new Date();
     const [currentTime, setcurrentTime] = useState(time);
+    let title = "Door Step -Add Service";
+    document.title = title;
 
     const handleAddUser = (event) => {
         event.preventDefault();
