@@ -1,14 +1,17 @@
 import React from 'react';
-import { Button, Col, Container, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Link, useLoaderData } from 'react-router-dom';
 import bannerOne from '../../Images/banner-1.png';
 import './Home.css'
 import fastDelivery from '../../Images/fast-delivery.png';
 import track from '../../Images/track.png';
 import hand from '../../Images/hand.png';
 import moto from '../../Images/moto.png';
+import HomeCard from './HomeCard/HomeCard';
 
 const Home = () => {
+    const data = useLoaderData();
+    console.log(data);
     return (
         <Container>
             <Container>
@@ -55,7 +58,11 @@ const Home = () => {
             <Container className='text-white my-5'>
                 <h1>My Services</h1>
                 <Row className='g-3'>
+                    {
+                        data.map(element=><HomeCard data={element} key={element._id}></HomeCard>)
+                    }
                 </Row>
+                <Button className='px-3 py-2 fw-bold' variant='success'><Link className='text-white text-decoration-none' to='/services'>See All</Link></Button>
             </Container>
             <Container className='text-white my-5 py-3'>
                 <Row className='g-3'>
