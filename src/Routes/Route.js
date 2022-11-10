@@ -7,6 +7,7 @@ import Blog from "../Pages/Blog/Blog";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/login/Login";
 import MyReviews from "../Pages/My Reviews/MyReviews";
+import UpdateReviews from "../Pages/My Reviews/UpdateReviews/UpdateReviews";
 import SignUp from "../Pages/Register/SignUp";
 import ServiceDetailsSection from "../Pages/Services/ServiceDetails/ServiceDetailsSection/ServiceDetailsSection";
 import Services from "../Pages/Services/Services";
@@ -76,6 +77,15 @@ const router = createBrowserRouter([
             {
                 path:'/addservice',
                 element:<PrivateRoute><AddService></AddService></PrivateRoute>
+            }
+            ,
+            {
+                path:'/updateReviews/:id',
+                loader:async({params})=>{
+                    return fetch(`http://localhost:5000/review/${params.id}`);
+                }
+                ,
+                element:<UpdateReviews></UpdateReviews>
             }
         ]
     }

@@ -7,6 +7,8 @@ import Review from './UsersReview/Review';
 const ReviewsSection = ({id,serviceName}) => {
     const { user } = useContext(AuthContext);
     const [userReview,setUserReview]=useState([])
+    const time = new Date();
+    const [currentTime, setcurrentTime] = useState(time);
     console.log(userReview);
     // console.log(id);
     const handleAddReview=(event)=>{
