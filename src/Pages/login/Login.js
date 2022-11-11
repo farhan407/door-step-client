@@ -23,8 +23,27 @@ const Login = () => {
         logIn(email,password)
         .then(result=>{
             const user=result.user;
-            console.log(from);
-            navigate(from,{replace:true});
+
+            const currentUser={
+                email:user.email,
+            }
+
+            //get jwt token
+            fetch('http://localhost:5000/jwt',{
+                method:'POST',
+                headers:{
+                    'content-type':'application/json'
+                },
+                body: JSON.stringify(currentUser)
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data);
+                //local storage save jwt
+                localStorage.setItem('doorStep-token',data.token);
+                //navigate user
+                navigate(from,{replace:true});
+            })
         })
         .catch(error=>{
             const errorMsg=error.message;

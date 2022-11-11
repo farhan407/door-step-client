@@ -3,13 +3,15 @@ import { Button, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Utilities/Context/UserContext';
 import Review from './UsersReview/Review';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ReviewsSection = ({id,serviceName}) => {
     const { user } = useContext(AuthContext);
     const [userReview,setUserReview]=useState([])
     const time = new Date();
     const [currentTime, setcurrentTime] = useState(time);
-    console.log(userReview);
+    // console.log(userReview);
     // console.log(id);
     const handleAddReview=(event)=>{
         event.preventDefault();
@@ -18,6 +20,10 @@ const ReviewsSection = ({id,serviceName}) => {
         const image=user?.photoURL || 'unregistered';
         const email=user?.email || 'unregistered';
         const description=form.description.value;
+        let time = new Date();
+        setcurrentTime(time);
+        const newTime=currentTime;
+        
         const review={
             service_id:id,
             serviceName:serviceName,
@@ -25,6 +31,7 @@ const ReviewsSection = ({id,serviceName}) => {
             email:email,
             img:image,
             message:description,
+            time:currentTime,
         }
         fetch("http://localhost:5000/reviews", {
             method: "POST",
@@ -36,9 +43,11 @@ const ReviewsSection = ({id,serviceName}) => {
         .then((res) => res.json())
         .then((data) => {
             if (data.acknowledged) {
-                alert("Reviews added successfully");
+                toast("Review Added Successfully");
                 event.target.reset();
             }
+            ;
+            
         })
         .catch(err=>console.error(err));
     }
@@ -68,6 +77,7 @@ const ReviewsSection = ({id,serviceName}) => {
                     userReview.map(element=><Review data={element} key={element._id}></Review>)
                 }
             </Row>
+            <ToastContainer />
         </Container>
     );
 };

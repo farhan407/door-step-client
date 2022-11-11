@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddService = () => {
     const [service, setService] = useState({});
@@ -21,7 +23,7 @@ const AddService = () => {
             .then((res) => res.json())
             .then((data) => {
                 if (data.acknowledged) {
-                    alert("User added successfully");
+                    toast("Service Added Successfully");
                     event.target.reset();
                 }
             });
@@ -31,7 +33,7 @@ const AddService = () => {
         const value = event.target.value;
         let time = new Date();
         setcurrentTime(time);
-        const newService = { ...service,currentTime};
+        const newService = { ...service, currentTime };
         newService[field] = value;
         setService(newService);
     };
@@ -47,7 +49,7 @@ const AddService = () => {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label className='text-white'>Iamge Url:</Form.Label>
-                            <Form.Control type="text" name='img' onBlur={handleInputBlur} placeholder="Enter Image Url:" required/>
+                            <Form.Control type="text" name='img' onBlur={handleInputBlur} placeholder="Enter Image Url:" required />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label className='text-white'>Price:</Form.Label>
@@ -55,11 +57,12 @@ const AddService = () => {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                             <Form.Label className='text-white'>Description</Form.Label>
-                            <Form.Control as="textarea" name='description' onBlur={handleInputBlur} rows={3} required/>
+                            <Form.Control as="textarea" name='description' onBlur={handleInputBlur} rows={3} required />
                         </Form.Group>
                         <Button variant="success" type="submit">
                             Add Service
                         </Button>
+                        <ToastContainer />
                     </Form>
                 </Col>
             </Row>

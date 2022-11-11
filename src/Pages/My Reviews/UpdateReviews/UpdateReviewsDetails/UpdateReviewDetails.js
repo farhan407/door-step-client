@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Col, Container, Form } from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateReviewDetails = ({data}) => {
     const { _id,email,serviceName, message } = data;
@@ -16,7 +18,7 @@ const UpdateReviewDetails = ({data}) => {
         .then(res=>res.json())
         .then(data=>{
             if (data.modifiedCount>0) {
-                alert("Reviews updated successfully");
+                toast("Updated Successfully");
             }
         })
     }
@@ -41,8 +43,9 @@ const UpdateReviewDetails = ({data}) => {
                         <Form.Control onChange={handleOnchange} type="text" name='message' defaultValue={message}   />
                     </Form.Group>
                     
-                    <Button className='my-2' type='submit' variant='success'>Update</Button>
+                    <Button className='my-2' type='submit'  variant='success'>Update</Button>
                 </Form>
+                <ToastContainer />
             </Container>
         </Col>
     );
