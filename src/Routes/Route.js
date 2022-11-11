@@ -21,7 +21,7 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 loader:async()=>{
-                    return fetch('http://localhost:5000/services');
+                    return fetch('https://door-step-server.vercel.app/services');
                 }
                 ,
                 element:<Home></Home>
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             {
                 path:'/home',
                 loader:async()=>{
-                    return fetch('http://localhost:5000/services');
+                    return fetch('https://door-step-server.vercel.app/services');
                 }
                 ,
                 element:<Home></Home>
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
             {
                 path:'/services',
                 loader:async()=>{
-                    return fetch('http://localhost:5000/allServices');
+                    return fetch('https://door-step-server.vercel.app/allServices');
                 }
                 ,
                 element:<Services></Services>
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
             {
                 path:'/services/:id',
                 loader:async({params})=>{
-                    return fetch(`http://localhost:5000/allServices/${params.id}`);
+                    return fetch(`https://door-step-server.vercel.app/allServices/${params.id}`);
                 }
                 ,
                 element:<ServiceDetailsSection></ServiceDetailsSection>
@@ -82,7 +82,7 @@ const router = createBrowserRouter([
             {
                 path:'/updateReviews/:id',
                 loader:async({params})=>{
-                    return fetch(`http://localhost:5000/review/${params.id}`);
+                    return fetch(`https://door-step-server.vercel.app/review/${params.id}`);
                 }
                 ,
                 element:<UpdateReviews></UpdateReviews>

@@ -8,7 +8,7 @@ const UpdateReviewDetails = ({data}) => {
     const [update,setUpdate]=useState(data);
     const handleUpdate=(event)=>{
         event.preventDefault();
-        fetch(`http://localhost:5000/review/${_id}`,{
+        fetch(`https://door-step-server.vercel.app/review/${_id}`,{
             method:'PATCH',
             headers:{
                 'content-type':'application/json'

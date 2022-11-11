@@ -13,7 +13,7 @@ const MyReviews = () => {
     const handleDelete = (_id) => {
         const proceed = window.confirm('Are you sure to delete this ?');
         if (proceed) {
-            fetch(`http://localhost:5000/review/${_id}`, {
+            fetch(`https://door-step-server.vercel.app/review/${_id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -28,7 +28,7 @@ const MyReviews = () => {
         }
     }
     useEffect(() => {
-        fetch(`http://localhost:5000/myreviews/${user?.email}`, {
+        fetch(`https://door-step-server.vercel.app/myreviews/${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('doorStep-token')}`
             }

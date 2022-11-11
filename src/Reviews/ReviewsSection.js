@@ -33,7 +33,7 @@ const ReviewsSection = ({id,serviceName}) => {
             message:description,
             time:currentTime,
         }
-        fetch("http://localhost:5000/reviews", {
+        fetch("https://door-step-server.vercel.app/reviews", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -52,7 +52,7 @@ const ReviewsSection = ({id,serviceName}) => {
         .catch(err=>console.error(err));
     }
     useEffect(()=>{
-            fetch(`http://localhost:5000/reviews/${id}`)
+            fetch(`https://door-step-server.vercel.app/reviews/${id}`)
             .then(res=>res.json())
             .then(data=>setUserReview(data))
     },[userReview])
